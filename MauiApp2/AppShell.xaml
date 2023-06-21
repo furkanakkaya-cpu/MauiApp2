@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2"
+    Shell.FlyoutBehavior="Flyout">
+   
+        
+    <ShellContent
+        Icon="doviz.png"
+        Title="Giriş"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    
+    <ShellContent
+        Icon="doviz.png"
+        Title="Döviz Kurları"
+        ContentTemplate="{DataTemplate local:Views.DovizKurlari}"
+        Route="DovizKurlari" />
+    
+    <ShellContent
+        Icon="hava.png"
+        Title="Hava Durumu"
+        ContentTemplate="{DataTemplate local:Views.HavaDurumu}"
+        Route="HavaDurummu" />
+
+
+    <ShellContent
+        Icon="doviz.png"
+        Title="Haberler"
+        ContentTemplate="{DataTemplate local:Views.Haberler}"
+        Route="Haberler" />
+
+        <ShellContent
+        Icon="doviz.png"
+        Title="Yapılacaklar"
+        ContentTemplate="{DataTemplate local:Views.Yapılacaklar}"
+        Route="Yapılacaklar" />
+
+        <ShellContent
+        Icon="doviz.png"
+        Title="Ayarlar"
+        ContentTemplate="{DataTemplate local:Views.Ayarlar}"
+        Route="Ayarlar" />
+        <!--<Tab Title="Hava Durumu"
+           Icon="doviz.png">
+            
+            <ShellContent Title="Hesap1" ContentTemplate="{DataTemplate local:HavaDurumu}"/>
+            <ShellContent Title="Hesap2"  ContentTemplate="{DataTemplate local:HavaDurumu}"/>
+        
+        </Tab>-->
+            
+        
+    
+    <!--<ShellContent
+        Icon="doviz.png"
+        Title="Haberler"
+        ContentTemplate="{DataTemplate local:Haberler}"
+        Route="Haberler" />-->
+</Shell>

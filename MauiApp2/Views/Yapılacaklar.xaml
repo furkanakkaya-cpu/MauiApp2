@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.Views.Yapılacaklar"
+             Title="Yapılacaklar">
+    <Grid>
+        <CollectionView x:Name="view" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="Auto,Auto,Auto"
+                          ColumnDefinitions="Auto,*,Auto">
+                        <CheckBox Grid.Row="0" Grid.ColumnSpan="3"></CheckBox>
+                        <Label Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding YBaslik}"/>
+                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="{Binding Aciklama}"/>
+                        <Label Grid.Row="0" Grid.ColumnSpan="3" Text="{Binding Tarih}"/>
+                        <ImageButton Grid.Row="0" Grid.ColumnSpan="3" Source="edit.png"/>
+                        <ImageButton Grid.Row="0" Grid.ColumnSpan="3" Source="delete.png"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </Grid>
+</ContentPage>
