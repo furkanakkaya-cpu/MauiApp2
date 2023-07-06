@@ -10,7 +10,7 @@
     <RefreshView RefreshColor="Orange"  x:Name="refreshView">
         <Grid RowDefinitions="Auto,*">
             <CollectionView Grid.Row="0" x:Name="lstKategoriler"
-                            
+                            SelectedItem="{Binding SelectedKategori}"
                             SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="18"/>
@@ -27,7 +27,7 @@
             </CollectionView>
 
             <CollectionView Grid.Row="1" x:Name="lstHaberler"
-                            
+                            ItemsSource="{Binding Haberler}"
                             SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
@@ -37,11 +37,12 @@
                         <StackLayout Padding="10">
                             <Image Source="{Binding enclosure.link}"/>
                             <Label Text="{Binding title}"/>
-                            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
-                                <Label Text="{Binding auther}"/>
+                            <StackLayout Orientation="Horizontal" Margin="5">
+                                <Label Text="{Binding author}"/>
                                 <Label Text="    |    "/>
                                 <Label Text="{Binding pubDate}"/>
-                            </HorizontalStackLayout>
+                            </StackLayout>
+                            <Label Text="{Binding description}" LineBreakMode="WordWrap" MaxLines="3"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

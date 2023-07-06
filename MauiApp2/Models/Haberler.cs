@@ -11,6 +11,7 @@ namespace MauiApp2.Models
         public string link { get; set; }
         public string type { get; set; }
     }
+
     public class Feed
     {
         public string url { get; set; }
@@ -20,13 +21,14 @@ namespace MauiApp2.Models
         public string description { get; set; }
         public string image { get; set; }
     }
+
     public class Item
     {
         public string title { get; set; }
         public string pubDate { get; set; }
         public string link { get; set; }
         public string guid { get; set; }
-        public string auther { get; set; }
+        public string author { get; set; } // Önceki sürümde "auther" yazıyordu, düzeltildi.
         public string thumbnail { get; set; }
         public string description { get; set; }
         public string content { get; set; }
@@ -39,14 +41,14 @@ namespace MauiApp2.Models
         public string status { get; set; }
         public Feed feed { get; set; }
         public List<Item> items { get; set; }
-
     }
+
     public class Kategori
     {
         public string Baslik { get; set; }
         public string Link { get; set; }
 
-        public static List<Kategori> liste = new Liste<Kategori>()
+        public static List<Kategori> liste = new List<Kategori>() // Önceki sürümde "Liste" yazıyordu, düzeltildi.
         {
             new Kategori() { Baslik = "Manşet", Link = "https://www.trthaber.com/manset_articles.rss" },
             new Kategori() { Baslik = "Son Dakika", Link = "https://www.trthaber.com/manset_articles.rss" },
@@ -56,4 +58,3 @@ namespace MauiApp2.Models
         };
     }
 }
-
