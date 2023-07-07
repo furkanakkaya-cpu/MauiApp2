@@ -10,7 +10,7 @@
     <RefreshView RefreshColor="Orange"  x:Name="refreshView">
         <Grid RowDefinitions="Auto,*">
             <CollectionView Grid.Row="0" x:Name="lstKategoriler"
-                            SelectedItem="{Binding SelectedKategori}"
+                            
                             SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="18"/>
@@ -27,7 +27,7 @@
             </CollectionView>
 
             <CollectionView Grid.Row="1" x:Name="lstHaberler"
-                            ItemsSource="{Binding Haberler}"
+                            
                             SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
@@ -35,14 +35,14 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10">
-                            <Image Source="{Binding enclosure.link}"/>
-                            <Label Text="{Binding title}"/>
+                            <Image Source="{Binding enclosure.link}" Aspect="AspectFill" IsVisible="{Binding IsDescriptionVisible}"/>
+                            <Label Text="{Binding title}" FontSize="Large" FontAttributes="Bold" LineBreakMode="WordWrap" MaxLines="2"/>
                             <StackLayout Orientation="Horizontal" Margin="5">
                                 <Label Text="{Binding author}"/>
                                 <Label Text="    |    "/>
                                 <Label Text="{Binding pubDate}"/>
                             </StackLayout>
-                            <Label Text="{Binding description}" LineBreakMode="WordWrap" MaxLines="3"/>
+                            <Label Text="{Binding description}" FontSize="Medium" LineBreakMode="WordWrap" MaxLines="3" IsVisible="{Binding IsDescriptionVisible}" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

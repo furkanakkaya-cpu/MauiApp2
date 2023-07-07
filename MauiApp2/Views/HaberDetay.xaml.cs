@@ -11,4 +11,8 @@ public partial class HaberDetay : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    public HaberDetay(Item seciliHaber)
+    {
+    }
 }

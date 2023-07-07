@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using MauiApp2.Models;
 
-
 namespace MauiApp2.Views
 {
     public partial class Haberler : ContentPage
@@ -50,8 +49,7 @@ namespace MauiApp2.Views
 
         private async Task HaberleriYukle(string rssUrl)
         {
-            try
-            {
+           
                 var httpClient = new HttpClient();
                 var rssIcerik = await httpClient.GetStringAsync(rssUrl);
 
@@ -66,7 +64,7 @@ namespace MauiApp2.Views
                     guid = (string)haberElementi.Element("guid"),
                     author = (string)haberElementi.Element("author"),
                     thumbnail = (string)haberElementi.Element("thumbnail"),
-                    description = (string)haberElementi.Element("description"),
+                    description = (string)haberElementi.Element("description")?.Value.Replace("<img src=\"", "").Replace("\" />", ""),
                     content = (string)haberElementi.Element("content"),
                     enclosure = new Enclosure
                     {
@@ -77,20 +75,13 @@ namespace MauiApp2.Views
                 }).ToList();
 
                 lstHaberler.ItemsSource = haberler;
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Hata", "Haberler yüklenirken bir hata oluþtu.", "Tamam");
-            }
+            
+           
         }
-
+       
         private void LstHaberler_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var seciliHaber = e.CurrentSelection.FirstOrDefault() as Item;
-            if (seciliHaber != null)
-            {
-                // Seçilen haber öðesini iþleyin
-            }
+            
         }
     }
 }
